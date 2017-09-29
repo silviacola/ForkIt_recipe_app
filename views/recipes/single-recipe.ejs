@@ -1,0 +1,50 @@
+
+  <!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Recipes</title>
+    <link rel='stylesheet' type='text/css' href='/css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+  </head>
+  <body>
+
+<% include ../partials/header.ejs %>
+  
+<div id="single-recipe">
+  <div class="recipe-card">  
+
+      <aside>         
+        <img src="<%= data.pic %>"/>  
+      </aside>
+          
+        <article class="recipe-card">
+          <h2 id="singlerecipeh2"><%= data.rec_name %></h2>
+          <h3><%= data.category %></h3>
+      
+          <ul>
+            <li><span class="icon icon-users"></span><span><%= data.servings%></span></li>
+            <li><span class="icon icon-clock"></span><span><%= data.prep_time %></span></li>
+            <li><span class="icon icon-level"></span><span><%= data.level %></span></li>
+            <li><span class="icon icon-calories"></span><span><%= data.calories %></span></li>
+          </ul>
+          <h3>Ingredients: </h3>
+          <p class="ingredients"><%= data.ingredients %></p>
+          <h3>Directions: </h3>     
+          <p><%= data.directions %></p>
+      
+        </article>
+          <a href="/recipes/<%= data.id %>/edit"> Edit this recipe </a>
+          <form action="/recipes/ <%= data.id %> ?_method=DELETE" method="Post">
+            <input type="Submit" value="Delete"/>
+          </form>
+        
+          <a href="/recipes" >Back</a>      
+      </div>
+    </div>
+
+
+<% include ../partials/footer.ejs %>
+

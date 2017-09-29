@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+  <title>Recipes</title>
+  <link rel='stylesheet' type='text/css' href='/css/reset.css'>
+  <link rel='stylesheet' type='text/css' href='/css/style.css'>
+</head>
+<body>
+
+<% include ../partials/header.ejs %>
+
+<section id="editOrAddRecipe">
+<h1> Add a New Recipe <H1>
+  <div class="container">
+      <form method='POST' action='/recipes'>
+        <input name='rec_name' type='text' placeholder='Name of the recipe' required/>
+        <input name='category' type='text' placeholder='Category' required/>
+        <input name='servings' type='text' placeholder='Servings (number)' required/>
+        <input name='prep_time' type='text' placeholder='Preparation Time (minutes)' required/>
+        <input name='level' type='text' placeholder='Difficulty level (Easy, Medium, Difficult)'required />
+        <input name='calories' type='text' placeholder='Calories' required />
+        <textarea name="ingredients" placeholder="Ingredients" required ></textarea>
+        <textarea name="directions" placeholder="Directions" required ></textarea>
+        <input name='pic' type='text' placeholder='Picture' />
+        <button name="send" type="submit" class="submit">SAVE</button>
+    </form>
+  </div>
+</section>
+
+
+<% include ../partials/footer.ejs %>

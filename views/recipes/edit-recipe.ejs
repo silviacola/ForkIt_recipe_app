@@ -1,0 +1,44 @@
+
+  <!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Recipes</title>
+    <link rel='stylesheet' type='text/css' href='/css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+  </head>
+  <body>
+
+
+<% include ../partials/header.ejs %>
+<section id="editOrAddRecipe">
+    <div class="container">
+        <h1 id="editTitle"> Editing: <%= data.rec_name %> <H1>
+        <form method='POST' action='/recipes/<%= data.id %>?_method=PUT'>
+            <input name="id" type="hidden" value="<%= data.id %>">
+                <h3>Name of the recipe</h3>
+            <input name='rec_name' type='text' value="<%= data.rec_name %>" />
+                <h3>Servings</h3>
+            <input name='servings' type='text' value="<%= data.servings %>" />
+                <h3>Category</h3>
+            <input name='category' type='text' value="<%= data.category %>" />
+                <h3>Preparation time (minutes)</h3>
+            <input name='prep_time' type='text' value="<%= data.prep_time %>" />
+                <h3>Difficulty (Easy, Medium, Difficult)</h3>
+            <input name='level' type='text' value="<%= data.level %>" />
+                <h3>Calories</h3>
+            <input name='calories' type='text' value="<%= data.calories %>" />
+                <h3>Ingredients</h3>
+            <input id="ingredients" name='ingredients' type='text' value="<%= data.ingredients %>" />
+                <h3>Directions</h3>
+            <input id="directions" name='directions' type='text' value="<%= data.directions %>" />
+                <h3>Picture</h3>
+            <input name='pic' type='text' value="<%= data.pic %>" />
+            <input type='submit' value='Save' class="submit" />
+        </form>
+    </div>
+</section>
+
+<% include ../partials/footer.ejs %>

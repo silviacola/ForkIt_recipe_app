@@ -1,0 +1,39 @@
+
+  <!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Recipes</title>
+    <link rel='stylesheet' type='text/css' href='/css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/css/style.css'>
+  </head>
+  <body>
+
+  <% include ../partials/header.ejs %>
+
+    <section id="allRecipes">
+        
+      <div class="pageTop">
+        <h1 id="toph1">Browse all the recipes</h1>
+        <a href="/recipes/new" id="button-all">Add a new recipe!</a>
+      </div>
+      
+
+      <ul class="list">      
+          <% for (let recipe of data) { %>  
+              <li class="list-item">
+                  <div class="list-content">
+                      <!-- <p><%= recipe.id %></p>                     -->
+                      <h2 id="listh2"><%= recipe.rec_name %></h2>
+                      <img src="<%=recipe.pic%>" alt=""/>
+                      <a href='/recipes/<%= recipe.id %>' class="button">Read more</a>
+                    </div>   
+              </li>
+          <% } %>
+      </ul>    
+
+  </section>   
+
+<% include ../partials/footer.ejs %>
