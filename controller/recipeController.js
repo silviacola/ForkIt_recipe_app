@@ -64,7 +64,7 @@ create(req, res, next) {
     and set the res.locals.recipe = recipe;, then calls next.
     Use a .catch method to display the error.
 */
-/* FIX THIS */
+
 update(req, res, next) {
     console.log(req.body, 'update controller');
     recipeDB.update(req.body, req.params.id)
@@ -83,22 +83,11 @@ update(req, res, next) {
     Uses a .then method that calls next.
     Uses a .catch method to display the error.
 */
-/* FIX THIS */
+
 destroy(req, res, next) {
     recipeDB.destroy(req.params.id)
       .then(() => next())
       .catch(err => next(err));
   }
-
-/* func showBlank to show a blank HTML form. 
-    Needs req only res as parameters.    
-    Render only a json with an object (?).
-*/
-/* FIX THIS */
-// showRecipeForm: (req, res) => {
-//     res.json({
-//       message: 'I’m the HTML form for new Recipes. I post to /recipes',
-//     });
-//   },
 
 };
